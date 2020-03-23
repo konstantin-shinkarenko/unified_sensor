@@ -46,4 +46,6 @@ CONVIVA SDK relies on an instance of ConvivaVideoAnalytics to monitor Video. Ini
 	// videoAnalytics would be used throughout the integration.
 	ConvivaVideoAnalytics  videoAnalytics = ConvivaAnalytics.buildVideoAnalytics(getApplicationContext());
 
+☞ NOTE: In an application with multiple videos, each video should have separate instance of ConvivaVideoAnalytics.
+
 
