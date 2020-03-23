@@ -94,3 +94,10 @@ Conviva categorizes metadata tags into three buckets:
 * Device related tags that automatically detected by Conviva backend.
 * Custom Tags per business requirement, specific to each customer.
 
+### Pre-Defined Tags
+
+All the mandatory tags are defined below along with their explanations. A code sample is shown after the table.
+
+|Description|Key|Type|Required|Notes|
+|-----------|---|----|--------|-----|
+|Stream URL|STREAM_URL|string|Y|The URL from which the video is initially loaded.|
