@@ -48,4 +48,11 @@ CONVIVA SDK relies on an instance of ConvivaVideoAnalytics to monitor Video. Ini
 
 ☞ NOTE: In an application with multiple videos, each video should have separate instance of ConvivaVideoAnalytics.
 
+## 4.Creating ExoPlayer Instances
+
+Use the ExoPlayerFactory class newSimpleInstance() API to create and ExoPlayer instance.
+
+	SimpleExoPlayer player = ExoPlayerFactory.newSimpleInstance (Context context, RenderersFactory renderersFactory, TrackSelector trackSelector, DrmSessionManager<frameworkmediacrypto> drmSessionManager);
+
+
 
