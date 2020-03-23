@@ -48,11 +48,25 @@ CONVIVA SDK relies on an instance of ConvivaVideoAnalytics to monitor Video. Ini
 
 ☞ NOTE: In an application with multiple videos, each video should have separate instance of ConvivaVideoAnalytics.
 
-## 4.Creating ExoPlayer Instances
+## 4. Creating ExoPlayer Instances
 
 Use the ExoPlayerFactory class newSimpleInstance() API to create and ExoPlayer instance.
 
 	SimpleExoPlayer player = ExoPlayerFactory.newSimpleInstance (Context context, RenderersFactory renderersFactory, TrackSelector trackSelector, DrmSessionManager<frameworkmediacrypto> drmSessionManager);
+
+# Monitoring Main Content
+
+The main purpose of Conviva Integration is to measure quality of experience by monitoring videos from the moment a user initiates playback until the video stops.
+
+Use reportPlaybackRequested method to start monitoring video. Please note that each video should be monitored separately.
+
+Similarly, reportPlaybackEnded method should be called when video is not playing anymore. Refer to below table to understand the difference scenarios:
+
+|Invoke ReportPlaybackRequested() As Soon As|Invoke ReportPlaybackEnded() As Soons As|
+|-------------------------------------------|----------------------------------------|
+|A user clicks on play button of the video. |A user stops the video.|
+|A new video starts in autoplay.	    |An autoplay video ends.|
+|An audio new item starts in playlist.	    |An item ends in playlist.|
 
 
 
