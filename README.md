@@ -197,7 +197,7 @@ Refer to this table for the usage of this API with various events:
 
 # Handle Additional Events
 
-## 1.Handling Application Background and Foreground
+## 1. Handling Application Background and Foreground
 
 Backgrounding states occur when:
 
@@ -225,3 +225,36 @@ The primary app and the secondary app will run in the foreground. Ensure that th
 
 The SDK continues to report heartbeats when the video plays in Picture-in-Picture mode.
 
+## 2. Reporting Network Metrics
+
+To enable Conviva library to collect the network metrics, the application must follow the Android permission instructions provided below. If the necessary permissions are not added in the application's manifest file, the Conviva library will report the default values, after performing the necessary security checks.
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+* In Android M and later versions (API 23 and above), please add a runtime permission request for android.permission.ACCESS_COARSE_LOCATION.
+* In Android Q and later versions (API 29 and above), please add a runtime permission request for android.permission.ACCESS_FINE_LOCATION.
+
+For more details, see Android permissions.
+
+	if (Build.VERSION.SDK_INT >= 23) {
+	   if (!(checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+	     requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 0);
+	     }
+	 }
+
+	if (Build.VERSION.SDK_INT >= 29) {
+	   if ( !(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+	     requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+	     }
+	 }
+	 
+List of metrics that require permissions and collection:
+
+|Metric|Permission Required|Automatically Collected|
+|------|-------------------|-----------------------|
+|Data Saver|```android.permission.ACCESS_NETWORK_STATE```|No|
+|Connection Type|```android.permission.ACCESS_NETWORK_STATE```|Yes<br/>
+☞ NOTE: The Conviva SDK will report raw values returned by the Connection Type. Connection type can be updated after session creation, before the first video frame is rendered.|
