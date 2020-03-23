@@ -269,8 +269,63 @@ Android SDK provides support for WCDMA signal strength from Android API 18 onwar
 * Android Q and above devices: With the release of Android 29, the functionality of the getAllCellInfo() API used for fetching the cellular networks signal strength information has changed. Your applications must add a new permission ACCESS_FINE_LOCATION for all devices using Android Q and above.
 
 ## 3.Data Saver
+
 The Conviva SDKis designed in accordance with the Data Saver capabilities of Android N. When a user enables Data Saver in Settings and the device is on a metered network, the system blocks background data usage and signals apps to use less data in the foreground wherever possible.
 
 If Data Saver setting is enabled and the app is white-listed, the Conviva SDK will continue to send heartbeats as the application is allowed to use data even on metered network. But if the app is not white-listed or is blocked, no heartbeat will be sent in the foreground as well as the background.
 
 ☞ NOTE: Conviva does monitor the change in the Data Saver settings during a running instance of the application and acts accordingly.
+
+## 4.Implementing Player Insight
+
+Player Insight is an advanced feature which allows you to track custom events that are not related to video rendering, but rather specific to your player's functionality. These events and their attributes are then tabulated in the Player Insight dashboard at Conviva Experience Insights (Pulse). Contact Conviva SC to enable Player Insights in Pulse.
+
+You may send a custom Player Insight event that can be associated with a video playback using the following method:
+
+	// Syntax of the API to report the player insight event
+	void reportPlaybackEvent(String eventType, Map<String, Object> eventDetail);
+
+	// Sample code snippet of event TestEvent with two attributes
+	Map<string, object> attr = new HashMap<>();
+	Attr.put(“attr1”, “sample value”);
+	videoAnalytics.reportPlaybackEvent(eventType, attr);
+	
+Use this method to send a custom Player Insight event specific to player’s functionality but not associated with a video playback:
+
+	// Sample code snippet
+	String eventType = "share-click";
+	Map<String, Object> attr = new HashMap<> ();
+	attr.put("location", "Toolbar");
+	attr.put("assetName", "Sample Video");
+	attr.put("shareService", "Facebook");
+	ConvivaAnalytics.reportAppEvent(eventType, attr);
+	
+## 5.Handling Video Changes
+
+In some Conviva SDK’s the video playback may lose the focus due to any of these reasons:
+
+* Login/Passcode dialog pop up, when a user initiates video playback and the application prompts, the user for login/password.
+* Bumper Video use cases.
+
+In such Conviva SDK's, use the below provided API to notify the SDK about the focus change and to pause monitoring the main content, and still continue to capture the main video content metrics other than Video Restart Time (VRT) and Video Startup Time (VST).
+
+	// Syntax of the API to report the user actions using Player Insight Event
+	reportPlaybackEvent(/*string */ eventType);
+
+	// To report start of login dialog pop up or bumper video
+	videoAnalytics.reportPlaybackEvent(ConvivaSdkConstants.USER_WAIT_STARTED);
+	videoAnalytics.reportPlaybackEvent(ConvivaSdkConstants.BUMPER_VIDEO_STARTED);
+
+	// To report exit/completion of login dialog pop up or bumper video
+	videoAnalytics.reportPlaybackEvent(ConvivaSdkConstants.USER_WAIT_ENDED);
+	videoAnalytics.reportPlaybackEvent(ConvivaSdkConstants.BUMPER_VIDEO_ENDED);
+	
+## 6.Validating Full Integration
+
+Please refer to the Integration Validation: Experience Insights page.
+
+### Metrics and Metadata Tables
+
+|Experience Insights|Metrics|Supported (Y/N)|Automatically Collected (Y/N)|Notes/Limitations|
+|-------------------|-------|---------------|-----------------------------|-----------------|
+|Quality-Video Startup|Attempts|Y|Y||
