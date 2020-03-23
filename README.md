@@ -165,3 +165,22 @@ The following table indicates the various update scenarios that can be seen in P
 |Stream URL|||✔|
 |Bitrate|||✔|
 |Encoded Frame Rate|||✔|
+
+You cannot currently update any other metadata items.
+
+To update the above metadata values, use the setContentInfo() API. For specific APIs to update Bitrate, refer to Set Bitrate section in the table below.
+
+	// Sample code snippet
+	Map<String, Object> newContentInfo = new HashMap<String, Object>();
+	newContentInfo.put(ConvivaSdkConstants.ASSET_NAME, "New assetName");
+	newContentInfo.put(ConvivaSdkConstants.STREAM_URL, "http://newstreamurl.conviva.com/");
+	newContentInfo.put("newTag1", "newVal1");
+
+	// Update the current video monitoring experience with metadata changes:
+	videoAnalytics.setContentInfo(newContentInfo);
+
+### Report Metric API Usage
+
+Use the void reportPlaybackMetric(String key, Object… val); API to report player/playback related events. It accepts multiple/zero values for the second argument.
+
+Refer to this table for the usage of this API with various events:
