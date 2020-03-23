@@ -342,8 +342,18 @@ Please refer to the Integration Validation: Experience Insights page.
 ||Connection Induces Rebuffering Ratio|Y|Y|
 ||Average Frame Rate|Y|Y|
 |Audience|Unique Devices|Y|Y|
-||Unique Devices|Y|Y|
 ||Total Minutes|Y|Y|
 ||Ended Plays/Unique Device|Y|Y|
 ||Min/Ended Play|Y|Y|
 ||Average % Complete|Y|Y|
+
+|Ad Breaks (Part of Ad Insights)|Metrics|Supported (Y/N)|Automatically Collected (Y/N)|Notes/Limitations|
+|-------------------------------|-------|---------------|-----------------------------|-----------------|
+|Ad Breaks Analysis|Ad Breaks Started|Y|N|For implementation, please refer to Ad Breaks for Android SDK.|
+||Ad Breaks Ended|Y|N|For implementation, please refer to Ad Breaks for Android SDK.|
+||Ad Breaks Completed|Y|N|Depends on Ad Breaks integration. For more details, please refer to Conviva Ad Insights Integration.|
+||Ad Breaks Abandoned|Y|N|Depends on Ad Breaks integration. For more details, please refer to Conviva Ad Insights Integration.|
+||Ad Breaks Actual Duration|Y|N|Depends on Ad Breaks integration. For more details, please refer to Conviva Ad Insights Integration.|
+||Ad Breaks / Ended Attempts|Y|N|Depends on Ad Breaks integration. For more details, please refer to Conviva Ad Insights Integration.|
+
+
