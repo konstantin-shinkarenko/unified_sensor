@@ -155,3 +155,4 @@ The following table indicates the various update scenarios that can be seen in P
 
 |Metadata|Set Only Once|Update Before First Video Frame|Multiple Updates During Session|
 |--------|-------------|-------------------------------|-------------------------------|
+|Asset Name|✔|||
