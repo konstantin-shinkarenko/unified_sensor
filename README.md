@@ -256,5 +256,7 @@ List of metrics that require permissions and collection:
 |Metric|Permission Required|Automatically Collected|
 |------|-------------------|-----------------------|
 |Data Saver|```android.permission.ACCESS_NETWORK_STATE```|No|
-|Connection Type|```android.permission.ACCESS_NETWORK_STATE```|Yes<br/>
-☞ NOTE: The Conviva SDK will report raw values returned by the Connection Type. Connection type can be updated after session creation, before the first video frame is rendered.|
+|Connection Type|```android.permission.ACCESS_NETWORK_STATE```|Yes<br/>☞ NOTE: The Conviva SDK will report raw values returned by the Connection Type. Connection type can be updated after session creation, before the first video frame is rendered.|
+|Link Encryption|```android.permission.ACCESS_WIFI_STATE```|Yes|
+|Wi-Fi Signal Strength|```android.permission.ACCESS_WIFI_STATE```|Yes<br/>☞ NOTE:Android SDK reports signal strength in decibel-milliwatts (dBm). If the information is not available, the default value is 1000.|
+|Cellular Signal Strength|```android.permission.ACCESS_COARSE_LOCATION```<br/>```android.permisson.ACCESS_FINE_LOCATION```|Yes<br/>☞ NOTE: Android SDK reports signal strength in decibel-milliwatts (dBm). If the information is not available, the default value is 1000.
