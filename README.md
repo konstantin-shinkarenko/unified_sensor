@@ -68,5 +68,14 @@ Similarly, reportPlaybackEnded method should be called when video is not playing
 |A new video starts in autoplay.	    |An autoplay video ends.|
 |An audio new item starts in playlist.	    |An item ends in playlist.|
 
+When an actual content player object is available and initialized, invoke the setPlayer() API and pass player object as an argument to allow Conviva SDK to monitor the playback metrics.
 
+	// Once player is available
+	videoAnalytics.setPlayer(contentPlayer);// for ex: instance of simpleExoplayer
+
+	// Syntax of the API to report the request of playback initiating the viewers experience.
+	void reportPlaybackRequested(Map<String, Object> contentInfo);
+
+	// So when user clicks on play, inside the play() function of the video player.
+	videoAnalytics.reportPlaybackRequested(contentInfo);
 
