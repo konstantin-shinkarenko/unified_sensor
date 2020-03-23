@@ -25,6 +25,18 @@ Initialize ConvivaAnalytics and use init() method to configure the settings.
 |CustomerKey|String to identify specific customer account. This is different for development and production environments|
 |Settings|Map of all Conviva settings. These are the allowed values.<br/><br/>		```ConvivaSdkConstants.GATEWAY_URL (Touchstone URL)```<br/>		```ConvivaSdkConstants.LOG_LEVEL. This enables debug logs.```<br/><br/>Replace settings object with null in production.|
 
+	if(BuildConfig.DEBUG){
+	Map<String, Object&t; settings = new HashMap<String, Object>();
+	String gatewayUrl = "Touchstone Service URL";
+	settings.put(ConvivaSdkConstants.GATEWAY_URL, gatewayUrl);
+	settings.put(ConvivaSdkConstants.LOG_LEVEL, ConvivaSdkConstants.LogLevel.DEBUG);
+	ConvivaAnalytics.init (getApplicationContext(), TEST_CUSTOMER_KEY, settings);
+	}else{
+	       //production release
+	ConvivaAnalytics.init (getApplicationContext(), PRODUCTION_CUSTOMER_KEY);
+	}
+
+☞ IMPORTANT: Please remove the Touchstone gatewayUrl and LogLevel settings for your production release.
 
 
 ## 3. Initializing Conviva Video Analytics
