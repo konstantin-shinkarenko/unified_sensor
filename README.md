@@ -1,4 +1,3 @@
-
 Welcome to the Conviva ExoPlayer Unified Sensor Integration!
 
 This document explains the Conviva ExoPlayer module integration within a Video Player which uses ExoPlayer. The integration is considered complete when all the asset metadata and player events are monitored accurately by CONVIVA ExoPlayer module.
