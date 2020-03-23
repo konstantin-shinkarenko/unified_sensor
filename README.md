@@ -152,3 +152,6 @@ Updating metadata or setting metadata late; after start monitoring of content is
 * Anytime during video playback; but only once.
 
 The following table indicates the various update scenarios that can be seen in Pulse (Experience Insights), for each metadata item:
+
+|Metadata|Set Only Once|Update Before First Video Frame|Multiple Updates During Session|
+|--------|-------------|-------------------------------|-------------------------------|
