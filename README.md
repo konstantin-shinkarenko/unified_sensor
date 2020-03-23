@@ -329,3 +329,8 @@ Please refer to the Integration Validation: Experience Insights page.
 |Experience Insights|Metrics|Supported (Y/N)|Automatically Collected (Y/N)|Notes/Limitations|
 |-------------------|-------|---------------|-----------------------------|-----------------|
 |Quality-Video Startup|Attempts|Y|Y||
+||Video Start Failure (VFS)|Y|Y|
+||Exits Before Video Starts (EBVS)|Y|Y|
+||Plays|Y|Y|
+||Video Startup Time (VST)|Y|Y|
+|Quality-Video Playback|Concurrent Plays|Y|Y|
