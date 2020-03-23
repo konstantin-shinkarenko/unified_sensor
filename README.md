@@ -105,3 +105,8 @@ All the mandatory tags are defined below along with their explanations. A code s
 |Stream Type|IS_LIVE|string|Y|Denotes whether the content is video on-demand or a live stream. Affects the computation and availability of the Conviva metrics.<br/><br/>```{Enum – ConvivaSdkConstants.StreamType.UNKNOWN/LIVE/VOD}```|
 |Player Name|PLAYER_NAME|string|Y|A string value used to distinguish individual apps, players, locations, platforms, and/or deployments. Simple values that are unique across all of your integrated platforms work best here. Do not include the build or version number in this property. The intention is to have a higher-level value to easily configure a filter to isolate the metrics of this Player|
 |Viewer ID|VIEWER_ID|string|Y for Viewers Module.|A unique identifier to distinguish individual viewers or devices through Conviva's Viewers Module (purchase required). The identifier may be a user's unique username, an email address, a unique device identifier, or a generated GUID.|
+|Default Resource|DEFAULT_RESOURCE|string|N|Default video server resource to report for the content. Use when the video server resource cannot be directly inferred from streamUrl.<br/>Examples: EDGECONVIVA SDKT-1, AKAMAI-FREE, LEVEL3-PREMIUM...|
+|Duration|DURATION|integer|N|Duration of the video content, in seconds.|
+|Encoded Frame Rate|ENCODED_FRAMERATE|integer|N|Encoded frame rate of the video in frames per second.|
+
+Conviva defines few recommended metadata, refer to the ConvivaSdkConstants class for more content metadata parameters.
