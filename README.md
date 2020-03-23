@@ -393,6 +393,16 @@ Please refer to the Integration Validation: Experience Insights page.
 |Pod Index Relative|podIndex|Y|N|Please refer to Android SDK: Configuring Ad Breaks.|
 |Pod|Pod Index Absolute|N|N|Please refer to Android SDK: Configuring Ad Breaks.|
 
+# Limitations
+
+Please refer to the Platform specific page for limitations.
+
+|Metadata/Metric Name|Impact|Conditions (Y/N)|Issue|
+|--------------------|------|----------------|-----|
+|Average Bitrate|Under reported|HLS Demuxed Streams|Player reports video bitrate but reports 0 for audio.|
+||Over reported|AVERAGE-BANDWIDTH unavailable|Player reports peak bitrate if average bitrate information is unavailable in manifest file.|
+
+☞ NOTE: ExoPlayer does not support DASH Live on Android M.
 
 
 
