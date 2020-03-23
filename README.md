@@ -356,4 +356,39 @@ Please refer to the Integration Validation: Experience Insights page.
 ||Ad Breaks Actual Duration|Y|N|Depends on Ad Breaks integration. For more details, please refer to Conviva Ad Insights Integration.|
 ||Ad Breaks / Ended Attempts|Y|N|Depends on Ad Breaks integration. For more details, please refer to Conviva Ad Insights Integration.|
 
+## 2.Metadata for Exoplayer
+
+|Experience Insights Dimension|Device Metadata|Required (Y/N)|Automatically Collected (Y/N)|Notes/Limitations|
+|-----------------------------|---------------|--------------|-----------------------------|-----------------|
+|Asset Name/Content Name|Asset Name|Y|N|Please refer to Android SDK: Configuring Metadata.|
+|CDN Name|CDN Vendor|Y|Y|Auto collected only if enabled from the customer portal.|
+|Stream URL|Stream URL|Y|N|Please refer to Android SDK: Configuring Metadata.|
+|Live or VOD|Live or VOD|Y|N|Please refer to Android SDK: Configuring Metadata.|
+|Players|Player Name|Y|N|Please refer to Android SDK: Configuring Metadata.|
+|Player Framework Name|Player Framework Name or SDK|Y|Y||
+|Player Framework Version|Player Framework Version|Y|Y||
+|Device Type|User Agent String|N|Y||
+|Viewer ID|Viewer ID|N|Y|Only required if customer has Viewer Module access. Please refer to Android SDK: Configuring Metadata.|
+|Browser Name|User Agent String|Y|Y||
+|Browser Version|User Agent String|Y|N/A||
+|Cities|IP Address|Y|Y||
+|Continents|IP Address|Y|Y||
+|Conviva Library Version|Conviva Library Version|Y|Y||
+|Countries|IP Address|Y|Y||
+|Device Manufacturer|User Agent String|Y|Y||
+|Device Name|User Agent String|Y|Y||
+|Device Marketing Name|User Agent String|Y|Y||
+|Device Hardware Type|User Agent String|Y|Y||
+|ISP Name|IP Address|Y|Y||
+|ASN|IP Address|Y|Y||
+|ASN Name|IP Address|N|Y||
+|DMA|IP Address|N|Y||
+|Device Operating System|User Agent String|Y|Y||
+|Device OS Version|User Agent String|Y|Y||
+
+
+
+
+
+
 
