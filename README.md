@@ -110,3 +110,45 @@ All the mandatory tags are defined below along with their explanations. A code s
 |Encoded Frame Rate|ENCODED_FRAMERATE|integer|N|Encoded frame rate of the video in frames per second.|
 
 Conviva defines few recommended metadata, refer to the ConvivaSdkConstants class for more content metadata parameters.
+
+### Custom Tags
+
+☞ HIGHLY RECOMMENDED: A dictionary defining custom string key/value pairs. You can filter and categorize metrics in Experience Insights (Pulse) based on your specific metadata use-case.
+
+
+See Integrate: Tags for further details. To add custom tags, add key value pair of String and any Object to the Map.
+
+	// Sample code snippet
+	// Dictionary for Content Metadata
+	Map<String, Object> contentInfo = new HashMap<String, Object>();
+	contentInfo.put("key", "value");
+
+	videoAnalytics.setContentInfo(contentInfo);
+	
+The following is a code example that creates a Dictionary Map for ContentMetadata along with custom tags:
+
+	// Sample code snippet
+	// Dictionary for Content Metadata
+	Map<String, Object> contentInfo = new HashMap<String, Object>();
+	contentInfo.put(ConvivaSdkConstants.ASSET_NAME, "ASSET_NAME");
+	contentInfo.put(ConvivaSdkConstants.PLAYER_NAME, "PLAYER_NAME");
+	contentInfo.put(ConvivaSdkConstants.ENCODED_FRAMERATE, 20);
+	contentInfo.put(ConvivaSdkConstants.DURATION, 30);
+	contentInfo.put(ConvivaSdkConstants.DEFAULT_RESOURCE, "DEFAULT_RESOURCE");
+	contentInfo.put(ConvivaSdkConstants.STREAM_URL, "STREAM_URL");
+	contentInfo.put(ConvivaSdkConstants.IS_LIVE, false);
+	contentInfo.put(ConvivaSdkConstants.VIEWER_ID, "VIEWER_ID");
+	contentInfo.put("key", "value");
+
+	videoAnalytics.setContentInfo(contentInfo);
+	
+### Update Content Metadata
+
+Not all metadata values can be updated at any time. In certain situations, your application may not have all the content metadata initially when reportPlaybackRequested is called. For example, when metadata is fetched from a content management system or metadata requires authentication for encrypted content.
+
+Updating metadata or setting metadata late; after start monitoring of content is subject to certain limitations. Some metadata can be set or updated:
+
+* Before the first video frame is rendered.
+* Anytime during video playback; but only once.
+
+The following table indicates the various update scenarios that can be seen in Pulse (Experience Insights), for each metadata item:
