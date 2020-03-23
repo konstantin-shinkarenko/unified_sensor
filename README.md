@@ -16,11 +16,9 @@ Add Conviva core SDK as shown below.
 
 ## 2. Configuration
 Initialize ConvivaAnalytics and use init() method to configure the settings.
-
-   public static void init(Context applicationContext, String customerKey);
-   public static void init(Context context, String customerKey, Map<string, object> settings);
-
-
+	
+	public static void init(Context applicationContext, String customerKey);
+   	public static void init(Context context, String customerKey, Map<string, object> settings);
 
 ## 3. Initializing Conviva Video Analytics
 
