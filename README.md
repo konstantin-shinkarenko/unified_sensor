@@ -79,3 +79,18 @@ When an actual content player object is available and initialized, invoke the se
 	// So when user clicks on play, inside the play() function of the video player.
 	videoAnalytics.reportPlaybackRequested(contentInfo);
 
+##1. Reporting Metadata
+
+Metadata of the video should be reported as tags via contentInfo map object.
+
+Create a dictionary Map with the video metadata that will be collected when you associate it with a video playback using setContentInfo() API.
+
+	// Syntax of the API to set the Content Metadata
+	void setContentInfo (Map<String, Object> contentInfo);
+	
+Conviva categorizes metadata tags into three buckets:
+
+Pre-defined Tags that must be reported as part of contentInfo for all videos.
+Device related tags that automatically detected by Conviva backend.
+Custom Tags per business requirement, specific to each customer.
+
