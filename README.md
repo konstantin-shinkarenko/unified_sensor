@@ -10,8 +10,9 @@ Conviva Exoplayer Library is built upon Conviva Android SDK. Please download the
 ☞ NOTE: Add jcenter() repository in your root file to automatically install via Gradle.
 Add Conviva core SDK as shown below.
 
-   implementation 'com.conviva.sdk:conviva-core-sdk:4.0+'
-   implementation 'com.conviva.sdk:conviva-exoplayer-sdk:4.0+'
+	implementation 'com.conviva.sdk:conviva--sdk:4.0+'
+	implementation 'com.conviva.sdk:conviva-exoplayer-sdk:4.0+'
+	
 
 ## 2. Configuration
 Initialize ConvivaAnalytics and use init() method to configure the settings.
