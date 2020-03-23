@@ -386,6 +386,12 @@ Please refer to the Integration Validation: Experience Insights page.
 |Device Operating System|User Agent String|Y|Y||
 |Device OS Version|User Agent String|Y|Y||
 
+|Ad Insights Dimension|Device Metadata|Required (Y/N)|Automatically Collected (Y/N)|Notes/Limitations|
+|---------------------|---------------|--------------|-----------------------------|-----------------|
+|Pod Planned Duration|podDuration|Y|N|Please refer to Android SDK: Configuring Ad Breaks.|
+|Pod Position|podPosition|Y|N|Please refer to Android SDK: Configuring Ad Breaks.|
+|Pod Index Relative|podIndex|Y|N|Please refer to Android SDK: Configuring Ad Breaks.|
+|Pod|Pod Index Absolute|N|N|Please refer to Android SDK: Configuring Ad Breaks.|
 
 
 
