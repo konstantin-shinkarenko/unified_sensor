@@ -41,6 +41,9 @@ Initialize ConvivaAnalytics and use init() method to configure the settings.
 
 ## 3. Initializing Conviva Video Analytics
 
+CONVIVA SDK relies on an instance of ConvivaVideoAnalytics to monitor Video. Initialize instance of ConvivaVideoAnalytics as shown below:
 
+	// videoAnalytics would be used throughout the integration.
+	ConvivaVideoAnalytics  videoAnalytics = ConvivaAnalytics.buildVideoAnalytics(getApplicationContext());
 
 
