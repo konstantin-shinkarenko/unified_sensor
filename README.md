@@ -193,3 +193,6 @@ Refer to this table for the usage of this API with various events:
 |Play Head Time|Report PlayHead Time.||
 |Buffer Length|Report Buffer length of the player.||
 |Rendered Framerate|Rendered framerate in fps.|```reportPlaybackMetric(ConvivaSdkConstants.PLAYBACK.RENDERED_FRAMERATE, 100);```|
+|CDN IP|CDN IP address in string format.<br/>☞ NOTE: The Conviva ExoPlayer module can also auto collect the CDN IP. Please contact Conviva Support to enable auto collection.|```reportPlaybackMetric (ConvivaSdkConstants.PLAYBACK.CDN_IP, ipaddr);```|
+
+
