@@ -41,12 +41,12 @@ public class ConvivaHelper {
 
         HashMap<String, Object> settings = new HashMap<>();
 
-        settings.put(GATEWAY_URL, "https://conviva.testonly.conviva.com");
+        settings.put(GATEWAY_URL, "GATEWAY_URL");
 
         // In Production the log level need not be set and will be taken as NONE.
         settings.put(LOG_LEVEL, ConvivaSdkConstants.LogLevel.INFO);
 
-        ConvivaAnalytics.init(_context, "1a6d7f0de15335c201e8e9aacbc7a0952f5191d7", settings, null);
+        ConvivaAnalytics.init(_context, "CUSTOMER_KEY", settings, null);
     }
 
     public static ConvivaVideoAnalytics getInstance(Context context){
