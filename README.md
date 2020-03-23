@@ -188,3 +188,8 @@ Refer to this table for the usage of this API with various events:
 |Reporting Event Name|Description|API Usage|
 |--------------------|-----------|---------|
 |Errors|Player errors are auto collected by the Conviva module. All additional video related errors which stall playback should be reported as fatal errors to Conviva via the CONVIVA SDK.<br/>☞ NOTE: If there are warnings from player, please do not report it to Conviva. Report only those errors which stops the playback. Usually all video players have a method which can be used.|```// setting of Content Info is optional```<br/>```reportPlaybackFailed(errorMessage, contentInfo);```|
+|Player States|All player states such as Playing, buffering etc. should be reported to CONVIVA SDK.||
+|Seek Events|Seeking or scrubbing should be reported to CONVIVA SDK when user starts seeking and stops seeking.||
+|Play Head Time|Report PlayHead Time.||
+|Buffer Length|Report Buffer length of the player.||
+|Rendered Framerate|Rendered framerate in fps.|```reportPlaybackMetric(ConvivaSdkConstants.PLAYBACK.RENDERED_FRAMERATE, 100);```|
