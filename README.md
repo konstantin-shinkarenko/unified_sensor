@@ -19,6 +19,13 @@ Initialize ConvivaAnalytics and use init() method to configure the settings.
 	
 	public static void init(Context applicationContext, String customerKey);
    	public static void init(Context context, String customerKey, Map<string, object> settings);
+|Parameter|Description|
+|---------|-----------|
+|Context |Android application context|
+|CustomerKey|String to identify specific customer account. This is different for development and production environments|
+|Settings|Map of all Conviva settings. These are the allowed values.<br/><br/>		```ConvivaSdkConstants.GATEWAY_URL (Touchstone URL)```<br/>		```ConvivaSdkConstants.LOG_LEVEL. This enables debug logs.```<br/><br/>Replace settings object with null in production.|
+
+
 
 ## 3. Initializing Conviva Video Analytics
 
