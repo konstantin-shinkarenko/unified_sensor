@@ -341,3 +341,9 @@ Please refer to the Integration Validation: Experience Insights page.
 ||Video Restart Time|Y|Y|
 ||Connection Induces Rebuffering Ratio|Y|Y|
 ||Average Frame Rate|Y|Y|
+|Audience|Unique Devices|Y|Y|
+||Unique Devices|Y|Y|
+||Total Minutes|Y|Y|
+||Ended Plays/Unique Device|Y|Y|
+||Min/Ended Play|Y|Y|
+||Average % Complete|Y|Y|
