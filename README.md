@@ -1,4 +1,3 @@
-[![Alternate Text]({image-url})]({https://www.youtube.com/watch?v=9kRgVxULbag} "Link Title")
 
 Welcome to the Conviva ExoPlayer Unified Sensor Integration!
 
