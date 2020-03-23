@@ -195,4 +195,33 @@ Refer to this table for the usage of this API with various events:
 |Rendered Framerate|Rendered framerate in fps.|```reportPlaybackMetric(ConvivaSdkConstants.PLAYBACK.RENDERED_FRAMERATE, 100);```|
 |CDN IP|CDN IP address in string format.<br/>☞ NOTE: The Conviva ExoPlayer module can also auto collect the CDN IP. Please contact Conviva Support to enable auto collection.|```reportPlaybackMetric (ConvivaSdkConstants.PLAYBACK.CDN_IP, ipaddr);```|
 
+# Handle Additional Events
+
+## 1.Handling Application Background and Foreground
+
+Backgrounding states occur when:
+
+* The home button is pushed.
+* The power button is pushed.
+* A phone call is received and answered.
+* Any event that puts the application in the background.
+
+Background and Foreground are considered to be application’s global events.
+
+### User Initiated Backgrounding
+
+When a video is playing and the app goes to the background due to a user action (for example; pressing, lock or answering a phone call), the video pauses. Follow these steps to handle backgrounding:
+
+* When the app pushed to background, invoke ConvivaAnalytics.reportAppBackgrounded().
+* When the app resumes, invoke ConvivaAnalytics.reportAppForegrounded().
+
+If your app does not run in the background, the Conviva heartbeat will not be sent.
+
+### Split View/Mult-Window on Android Devices
+
+The primary app and the secondary app will run in the foreground. Ensure that the application creates two instances of Conviva client, sets up metadata twice, creates two sessions, sends playback event for each session in its corresponding session and then closes both the sessions. With this implementation, the metadata and metrics displayed are known to work in Conviva pulse dashboard.
+
+### Picture-in-Picture (PiP)
+
+The SDK continues to report heartbeats when the video plays in Picture-in-Picture mode.
 
