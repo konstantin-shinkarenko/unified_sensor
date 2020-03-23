@@ -156,3 +156,12 @@ The following table indicates the various update scenarios that can be seen in P
 |Metadata|Set Only Once|Update Before First Video Frame|Multiple Updates During Session|
 |--------|-------------|-------------------------------|-------------------------------|
 |Asset Name|✔|||
+|Viewer Id||✔|||
+|Stream Type||✔|||
+|Player Name||✔|||
+|Content Length||✔|||
+|Custom Tags||✔|||
+|Resource|||✔|
+|Stream URL|||✔|
+|Bitrate|||✔|
+|Encoded Frame Rate|||✔|
