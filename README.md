@@ -334,3 +334,10 @@ Please refer to the Integration Validation: Experience Insights page.
 ||Plays|Y|Y|
 ||Video Startup Time (VST)|Y|Y|
 |Quality-Video Playback|Concurrent Plays|Y|Y|
+||Video Playback Failures (VPF)|Y|Y|
+||Rebuffering Ratio|Y|Y|
+||Average Bitrate|Y|Y|Bitrate is automatically detected by Conviva for com.google.android.exoplayer2.ExoPlayer. Refer to the Average Bitrate limitation.|
+||Ended Plays|Y|Y|
+||Video Restart Time|Y|Y|
+||Connection Induces Rebuffering Ratio|Y|Y|
+||Average Frame Rate|Y|Y|
