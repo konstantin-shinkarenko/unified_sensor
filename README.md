@@ -259,4 +259,18 @@ List of metrics that require permissions and collection:
 |Connection Type|```android.permission.ACCESS_NETWORK_STATE```|Yes<br/>☞ NOTE: The Conviva SDK will report raw values returned by the Connection Type. Connection type can be updated after session creation, before the first video frame is rendered.|
 |Link Encryption|```android.permission.ACCESS_WIFI_STATE```|Yes|
 |Wi-Fi Signal Strength|```android.permission.ACCESS_WIFI_STATE```|Yes<br/>☞ NOTE:Android SDK reports signal strength in decibel-milliwatts (dBm). If the information is not available, the default value is 1000.|
-|Cellular Signal Strength|```android.permission.ACCESS_COARSE_LOCATION```<br/>```android.permisson.ACCESS_FINE_LOCATION```|Yes<br/>☞ NOTE: Android SDK reports signal strength in decibel-milliwatts (dBm). If the information is not available, the default value is 1000.
+|Cellular Signal Strength|```android.permission.ACCESS_COARSE_LOCATION```<br/>```android.permisson.ACCESS_FINE_LOCATION```|Yes<br/>☞ NOTE: Android SDK reports signal strength in decibel-milliwatts (dBm). If the information is not available, the default value is 1000.|
+
+### Cellular Signal Strength for WCDMA
+
+Android SDK provides support for WCDMA signal strength from Android API 18 onwards, therefore Conviva SDK will not be able to report it below API level 18.
+
+* Android L devices: Signal strength information for cellular networks in not available in Android L devices therefore Conviva SDK will not be able to report it. This is also captured as Google Android Issue: 60430.
+* Android Q and above devices: With the release of Android 29, the functionality of the getAllCellInfo() API used for fetching the cellular networks signal strength information has changed. Your applications must add a new permission ACCESS_FINE_LOCATION for all devices using Android Q and above.
+
+## 3.Data Saver
+The Conviva SDKis designed in accordance with the Data Saver capabilities of Android N. When a user enables Data Saver in Settings and the device is on a metered network, the system blocks background data usage and signals apps to use less data in the foreground wherever possible.
+
+If Data Saver setting is enabled and the app is white-listed, the Conviva SDK will continue to send heartbeats as the application is allowed to use data even on metered network. But if the app is not white-listed or is blocked, no heartbeat will be sent in the foreground as well as the background.
+
+☞ NOTE: Conviva does monitor the change in the Data Saver settings during a running instance of the application and acts accordingly.
