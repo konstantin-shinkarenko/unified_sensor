@@ -1,5 +1,7 @@
 Welcome to the Conviva ExoPlayer Unified Sensor Integration!
 
+Please go to wiki for instructions: https://github.com/konstantin-shinkarenko/doc-sample-proj/wiki/Player:-HTML5-Desktop-Player
+
 This document explains the Conviva ExoPlayer module integration within a Video Player which uses ExoPlayer. The integration is considered complete when all the asset metadata and player events are monitored accurately by CONVIVA ExoPlayer module.
 
 	NOTE: This documentation is for Android SDK 4.0.2 and above. If you are using the legacy SDK, we highly recommend you upgrade to the new SDK below. For reference, the deprecated legacy SDK documentation can be found here.
